@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root {
+  --white-color: #FFFFFF;
+  --sidebar-background-color: #494B50;
+  --sidebar-text-color: #B6B6B6;
+  --content-background-color: #35363A;
+  --content-text-color: #B6B6B6;
+}
+
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: all .2s linear;
+  line-height: 1.5;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--content-background-color);
+}
+
+
+
+/* left-sidebar styles */
+.left-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: var(--sidebar-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1000;
+  padding: 10rem 10rem;
+}
+
+.left-sidebar .container {
+  padding-right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: center;
+  gap: 4.5rem;
+  flex-shrink: 0;
+}
+
+.left-sidebar .logo {
+  text-transform: uppercase;
+  color: var(--white-color);
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: .5rem;
+}
+
+.left-sidebar .links a {
+  display: flex;
+  font-size: 1.7rem;
+  color: var(--sidebar-text-color);
+  margin: .5rem 0;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.left-sidebar .links a:hover {
+  color: var(--white-color);
+}
+
+.left-sidebar footer p {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--sidebar-text-color);
+  margin: .3rem 0;
+  text-align: left;
+}
+
+.left-sidebar footer p a {
+  color: var(--sidebar-text-color);
+}
+
+.left-sidebar footer p a:hover {
+  color: var(--white-color);
+}
+
+
+/* main content styles */
+.home {
+  padding-left: 400px;
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  min-height: 100vh;
+}
+
+.home .image {
+  flex: 0 0 40rem;
+  display: flex;
+  justify-content: center;
+}
+
+.home .image img {
+  width: 80%;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.home .content {
+  flex: 0 0 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.home .content h2 {
+  font-size: 5rem;
+  color: var(--white-color);
+  text-transform: uppercase;
+}
+
+.home .content .info {
+  font-size: 1.5rem;
+  color: var(--content-text-color);
+}
+
+.home .content .follow a {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 1rem;
+}
+
+
+
+/* navbar styles */
+.navbar{
+  display: none;
+  position: fixed;
+    /* top: 0;
+    left: 0;
+    right: 0; */
+  background: var(--sidebar-background-color);
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  height:  4rem;
+  width: 100%;
+}
+
+#menu-bars{
+  padding: 0rem 2rem;
+  font-size: 2.5rem;
+  color:var(--white-color);
+}
+
+.navbar .logo {
+  text-transform: uppercase;
+  color: var(--white-color);
+  padding: 0rem 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: .5rem;
+  cursor: pointer;
+}
+
+
+/* right-sidebar styles */
+.right-sidebar{
+  display: none;
+  width: 100%;
+  height: 100vh;
+}
+
+.right-sidebar .links{
+  display: none;
+  width: 300px;
+  height: 100%;
+  background-color: #262626;
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-sidebar.active{
+  display: flex;
+}
+
+
+
+/* media queries  */
+@media (max-width:1600px) {
+  .left-sidebar {
+    padding: auto, 10rem;
+  }
+
+  .left-sidebar{
+    padding: 10rem 5rem;
+  }
+
+  .home{
+    padding-left: 300px;
+  }
+}
+
+@media (max-width:1200px) {
+  .left-sidebar {
+    display: none;
+  }
+  .navbar{
+    display: flex;
+  }
+  .home{
+    padding-left: 0;
+  }
+}
+
+
+@media (max-width:857px) {
+  .home .content {
+    align-items: center;
+  }
+
+  .home .image {
+    flex: 0 0 40rem;
+  }
+
+  .home .content .info {
+    text-align: center;
+  }
+}
+
+
+@media (max-width:576px) {
+  .home .image img {
+    width: 60%;
+  }
+
+  .home .content h2 {
+    font-size: 3.5rem;
+  }
+}
